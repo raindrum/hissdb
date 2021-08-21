@@ -1,0 +1,3889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>Library Reference - HissDB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="light-blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#library-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HissDB" class="md-header__button md-logo" aria-label="HissDB" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HissDB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Library Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/raindrum/hissdb/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HissDB" class="md-nav__button md-logo" aria-label="HissDB" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HissDB
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/raindrum/hissdb/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Library Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Library Reference
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.__delitem__" class="md-nav__link">
+    __delitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.__enter__" class="md-nav__link">
+    __enter__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.__setattr__" class="md-nav__link">
+    __setattr__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.commit" class="md-nav__link">
+    commit()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.connect" class="md-nav__link">
+    connect()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.create_table" class="md-nav__link">
+    create_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.disconnect" class="md-nav__link">
+    disconnect()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.drop_table" class="md-nav__link">
+    drop_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.execute" class="md-nav__link">
+    execute()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.rollback" class="md-nav__link">
+    rollback()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    Table
+  </a>
+  
+    <nav class="md-nav" aria-label="Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.count" class="md-nav__link">
+    count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.delete" class="md-nav__link">
+    delete()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.fetchall" class="md-nav__link">
+    fetchall()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.fetchone" class="md-nav__link">
+    fetchone()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.insert" class="md-nav__link">
+    insert()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.insertmany" class="md-nav__link">
+    insertmany()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.select" class="md-nav__link">
+    select()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.update" class="md-nav__link">
+    update()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column" class="md-nav__link">
+    Column
+  </a>
+  
+    <nav class="md-nav" aria-label="Column">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.__hash__" class="md-nav__link">
+    __hash__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.fetchall" class="md-nav__link">
+    fetchall()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.fetchone" class="md-nav__link">
+    fetchone()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.select" class="md-nav__link">
+    select()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.update" class="md-nav__link">
+    update()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    Expressions
+  </a>
+  
+    <nav class="md-nav" aria-label="Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.desc" class="md-nav__link">
+    desc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__abs__" class="md-nav__link">
+    __abs__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__add__" class="md-nav__link">
+    __add__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__invert__" class="md-nav__link">
+    __invert__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__mod__" class="md-nav__link">
+    __mod__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__str__" class="md-nav__link">
+    __str__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.avg" class="md-nav__link">
+    avg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.ceil" class="md-nav__link">
+    ceil()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.count" class="md-nav__link">
+    count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.exists" class="md-nav__link">
+    exists()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.exp" class="md-nav__link">
+    exp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.floor" class="md-nav__link">
+    floor()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.ln" class="md-nav__link">
+    ln()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.max" class="md-nav__link">
+    max()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.min" class="md-nav__link">
+    min()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.pow" class="md-nav__link">
+    pow()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.render" class="md-nav__link">
+    render()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.round" class="md-nav__link">
+    round()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.sqrt" class="md-nav__link">
+    sqrt()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statements" class="md-nav__link">
+    Statements
+  </a>
+  
+    <nav class="md-nav" aria-label="Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.statements.BaseStatement.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.statements.Insert.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.statements.Select.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.statements.InsertMany.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.__delitem__" class="md-nav__link">
+    __delitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.__enter__" class="md-nav__link">
+    __enter__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.__setattr__" class="md-nav__link">
+    __setattr__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.commit" class="md-nav__link">
+    commit()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.connect" class="md-nav__link">
+    connect()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.create_table" class="md-nav__link">
+    create_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.disconnect" class="md-nav__link">
+    disconnect()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.drop_table" class="md-nav__link">
+    drop_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.execute" class="md-nav__link">
+    execute()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.db.Database.rollback" class="md-nav__link">
+    rollback()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    Table
+  </a>
+  
+    <nav class="md-nav" aria-label="Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.count" class="md-nav__link">
+    count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.delete" class="md-nav__link">
+    delete()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.fetchall" class="md-nav__link">
+    fetchall()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.fetchone" class="md-nav__link">
+    fetchone()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.insert" class="md-nav__link">
+    insert()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.insertmany" class="md-nav__link">
+    insertmany()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.select" class="md-nav__link">
+    select()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.table.Table.update" class="md-nav__link">
+    update()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column" class="md-nav__link">
+    Column
+  </a>
+  
+    <nav class="md-nav" aria-label="Column">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.__hash__" class="md-nav__link">
+    __hash__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.fetchall" class="md-nav__link">
+    fetchall()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.fetchone" class="md-nav__link">
+    fetchone()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.select" class="md-nav__link">
+    select()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.column.Column.update" class="md-nav__link">
+    update()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    Expressions
+  </a>
+  
+    <nav class="md-nav" aria-label="Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.desc" class="md-nav__link">
+    desc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__abs__" class="md-nav__link">
+    __abs__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__add__" class="md-nav__link">
+    __add__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__invert__" class="md-nav__link">
+    __invert__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__mod__" class="md-nav__link">
+    __mod__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.__str__" class="md-nav__link">
+    __str__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.avg" class="md-nav__link">
+    avg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.ceil" class="md-nav__link">
+    ceil()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.count" class="md-nav__link">
+    count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.exists" class="md-nav__link">
+    exists()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.exp" class="md-nav__link">
+    exp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.floor" class="md-nav__link">
+    floor()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.ln" class="md-nav__link">
+    ln()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.max" class="md-nav__link">
+    max()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.min" class="md-nav__link">
+    min()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.pow" class="md-nav__link">
+    pow()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.render" class="md-nav__link">
+    render()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.round" class="md-nav__link">
+    round()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.expression.Expression.sqrt" class="md-nav__link">
+    sqrt()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statements" class="md-nav__link">
+    Statements
+  </a>
+  
+    <nav class="md-nav" aria-label="Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.statements.BaseStatement.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.statements.Insert.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.statements.Select.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hissdb.statements.InsertMany.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/raindrum/hissdb/edit/main/docs_source/library.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="library-reference">Library Reference</h1>
+<h2 id="database">Database</h2>
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+      <p>A pretty face for a sqlite3 database, with fancy access methods.</p>
+<p>If you have a Database called 'db', you can generally access any
+table in it via 'db.TABLE_NAME'. If the table name conflicts with
+an existing property or method, you can instead use 'db[TABLE_NAME]'
+as a fallback.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.__delitem__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Remove a Table from the database</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="s2">&quot;Remove a Table from the database&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DROP TABLE </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_tables</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.__enter__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Context manager to handle connections to the database. If
+self._autocommit is True, then any changes are automatically
+committed at the close of the the 'with' statement.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Context manager to handle connections to the database. If</span>
+<span class="sd">    self._autocommit is True, then any changes are automatically</span>
+<span class="sd">    committed at the close of the the &#39;with&#39; statement.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">reuse_existing</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">autoconnect</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">autocommit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Database constructor.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>path</code></td>
+        <td><code>str</code></td>
+        <td><p>the file path for a new or existing database, or
+':memory:' for an in-memory database with no
+corresponding file</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>autoconnect</code></td>
+        <td><code>bool</code></td>
+        <td><p>whether to autoconnect to the database whenever
+a query requires it. If this is False, you must manually
+run the connect() method or keep all database operations
+inside a 'with' statement.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>autocommit</code></td>
+        <td><code>bool</code></td>
+        <td><p>whether to write all changes to the database at
+the close of a 'with' statement. Note that even if this
+is True, you must manually run the commit() method if
+you make changes <em>outside</em> of a context manager.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>verbose</code></td>
+        <td><code>bool</code></td>
+        <td><p>whether to print each SQL statement to the console
+as it is executed</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">autoconnect</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">autocommit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Database constructor.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        path: the file path for a new or existing database, or</span>
+<span class="sd">            &#39;:memory:&#39; for an in-memory database with no</span>
+<span class="sd">            corresponding file</span>
+<span class="sd">        autoconnect: whether to autoconnect to the database whenever</span>
+<span class="sd">            a query requires it. If this is False, you must manually</span>
+<span class="sd">            run the connect() method or keep all database operations</span>
+<span class="sd">            inside a &#39;with&#39; statement.</span>
+<span class="sd">        autocommit: whether to write all changes to the database at</span>
+<span class="sd">            the close of a &#39;with&#39; statement. Note that even if this</span>
+<span class="sd">            is True, you must manually run the commit() method if</span>
+<span class="sd">            you make changes *outside* of a context manager.</span>
+<span class="sd">        verbose: whether to print each SQL statement to the console</span>
+<span class="sd">            as it is executed</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_verbose</span> <span class="o">=</span> <span class="n">verbose</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_autoconnect</span> <span class="o">=</span> <span class="n">autoconnect</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_autocommit</span> <span class="o">=</span> <span class="n">autocommit</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_tables</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT sql FROM sqlite_schema&#39;</span><span class="p">)</span>
+        <span class="n">schema_rows</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">schema_row</span> <span class="ow">in</span> <span class="n">schema_rows</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">schema_row</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="k">continue</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">_from_schema</span><span class="p">(</span><span class="n">schema_row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tables</span><span class="p">[</span><span class="n">table</span><span class="o">.</span><span class="n">_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_autoconnect</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.__setattr__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>If value is a Table object, do CREATE TABLE. Otherwise,
+do normal <strong>setattr</strong> behavior.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    If value is a Table object, do CREATE TABLE. Otherwise,</span>
+<span class="sd">    do normal __setattr__ behavior.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Table</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.commit" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">commit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Save recent changes to the database</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">commit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;Save recent changes to the database&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.connect" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reuse_existing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Connect to the database. Returns a sqlite3 connection object,
+but you should not need to use it.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reuse_existing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Connect to the database. Returns a sqlite3 connection object,</span>
+<span class="sd">    but you should not need to use it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span> <span class="ow">and</span> <span class="n">reuse_existing</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.create_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">{},</span> <span class="n">foreign_keys</span><span class="o">=</span><span class="p">{},</span> <span class="n">primary_key</span><span class="o">=</span><span class="p">(),</span> <span class="n">if_not_exist</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add a table to the database.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>str</code></td>
+        <td><p>the name of the new table</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>columns</code></td>
+        <td><code>dict</code></td>
+        <td><p>a dict where each key is the name of a column, and
+each value contains the column constraints, e.g.
+{'id': 'INTEGER PRIMARY KEY', 'title': 'TEXT NOT NULL'}.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+      <tr>
+        <td><code>foreign_keys</code></td>
+        <td><code>dict</code></td>
+        <td><p>a dict where each key is the name of a column
+in this table, and each value represents a column in
+another table. Values can be specified as Column objects
+or as strings like 'users(id)' or 'users.id'.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+      <tr>
+        <td><code>primary_key</code></td>
+        <td><code>tuple</code></td>
+        <td><p>optional tuple with the names of multiple
+columns that should be combined to form the primary key.</p></td>
+        <td><code>()</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">columns</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="n">foreign_keys</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="n">primary_key</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+    <span class="n">if_not_exist</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add a table to the database.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        name: the name of the new table</span>
+<span class="sd">        columns: a dict where each key is the name of a column, and</span>
+<span class="sd">            each value contains the column constraints, e.g.</span>
+<span class="sd">            {&#39;id&#39;: &#39;INTEGER PRIMARY KEY&#39;, &#39;title&#39;: &#39;TEXT NOT NULL&#39;}.</span>
+<span class="sd">        foreign_keys: a dict where each key is the name of a column</span>
+<span class="sd">            in this table, and each value represents a column in</span>
+<span class="sd">            another table. Values can be specified as Column objects</span>
+<span class="sd">            or as strings like &#39;users(id)&#39; or &#39;users.id&#39;.</span>
+<span class="sd">        primary_key: optional tuple with the names of multiple</span>
+<span class="sd">            columns that should be combined to form the primary key.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">if_not_exist</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tables</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">foreign_keys</span><span class="p">,</span> <span class="n">primary_key</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span>
+    <span class="k">return</span> <span class="n">table</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.disconnect" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="s1">&#39;AUTO&#39;</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Close the connection to the database. If commit is False, roll
+back any changes. If commit is True, commit them.</p>
+<p>If commit is 'AUTO', only commit if self._autocommit is True, but
+don't rollback either way.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="s1">&#39;AUTO&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Close the connection to the database. If commit is False, roll</span>
+<span class="sd">    back any changes. If commit is True, commit them.</span>
+
+<span class="sd">    If commit is &#39;AUTO&#39;, only commit if self._autocommit is True, but</span>
+<span class="sd">    don&#39;t rollback either way.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">commit</span> <span class="o">==</span> <span class="kc">True</span> <span class="ow">or</span> <span class="p">(</span><span class="n">commit</span> <span class="o">==</span> <span class="s1">&#39;AUTO&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_autocommit</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">commit</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.drop_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Delete the given table and its contents.
+Same as 'del self[name]'</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">drop_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete the given table and its contents.</span>
+<span class="sd">    Same as &#39;del self[name]&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">del</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.execute" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">placeholders</span><span class="o">=</span><span class="p">{},</span> <span class="n">many</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Feed the given statement and placeholders to the execute() or
+executemany() method of this database's SQLite3 connection. If
+self._verbose is True, also print the executed statement.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="n">statement</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">placeholders</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="n">many</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Feed the given statement and placeholders to the execute() or</span>
+<span class="sd">    executemany() method of this database&#39;s SQLite3 connection. If</span>
+<span class="sd">    self._verbose is True, also print the executed statement.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="s1">&#39;placeholders&#39;</span><span class="p">):</span>
+        <span class="n">placeholders</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">placeholders</span><span class="p">)</span>
+        <span class="n">placeholders</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">statement</span><span class="o">.</span><span class="n">placeholders</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">many</span><span class="p">:</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">executemany</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">statement</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+            <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;,</span><span class="se">\n</span><span class="si">{</span><span class="n">placeholders</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">placeholders</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">placeholders</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.db.Database.rollback" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">rollback</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Undo all changes since the last commit</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/db.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">rollback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;Undo all changes since the last commit&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>    
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="table">Table</h2>
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.table.Table.count" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Get the number of rows in the table, optionally restricted to
+those that meet the given criteria.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/table.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the number of rows in the table, optionally restricted to</span>
+<span class="sd">    those that meet the given criteria.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+        <span class="n">count</span><span class="p">(),</span>
+        <span class="n">where</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.table.Table.delete" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Make and execute a Delete statement from this table, and return
+the number of rows deleted.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/table.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make and execute a Delete statement from this table, and return</span>
+<span class="sd">    the number of rows deleted.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Delete</span><span class="p">(</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="n">where</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span><span class="o">.</span><span class="n">rowcount</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.table.Table.fetchall" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">fetchall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Make and execute a Select statement from
+this table, and return a list of all results.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/table.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fetchall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">where</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make and execute a Select statement from</span>
+<span class="sd">    this table, and return a list of all results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.table.Table.fetchone" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">fetchone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Make and execute a Select statement from
+this table, and return the first result.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/table.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fetchone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">where</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make and execute a Select statement from</span>
+<span class="sd">    this table, and return the first result.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.table.Table.insert" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Make and execute an Insert statement into this table, and return
+the index of the of the new row.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/table.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make and execute an Insert statement into this table, and return</span>
+<span class="sd">    the index of the of the new row.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Insert</span><span class="p">(</span><span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="n">row</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span><span class="o">.</span><span class="n">lastrowid</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.table.Table.insertmany" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">insertmany</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">or_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Make and execute an InsertMany statement, and return the number
+of rows added.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/table.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">insertmany</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">cols</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Column</span><span class="p">],</span>
+    <span class="n">rows</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">],</span>
+    <span class="n">or_</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make and execute an InsertMany statement, and return the number</span>
+<span class="sd">    of rows added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">InsertMany</span><span class="p">(</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="n">cols</span><span class="p">,</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="n">rows</span><span class="p">,</span>
+        <span class="n">or_</span> <span class="o">=</span> <span class="n">or_</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span><span class="o">.</span><span class="n">rowcount</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.table.Table.select" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Make and execute a Select statement from this table, and return
+the resulting SQLite3 Cursor object.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/table.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="n">cols</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Column</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span>
+    <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Cursor</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make and execute a Select statement from this table, and return</span>
+<span class="sd">    the resulting SQLite3 Cursor object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">statement</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="n">cols</span><span class="p">,</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="n">where</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">statement</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.table.Table.update" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">updates</span><span class="o">=</span><span class="p">{},</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Make and execute an Update statement from this table,
+and return the number of rows modified.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/table.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="n">updates</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Column</span><span class="p">,</span> <span class="n">Expression</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make and execute an Update statement from this table,</span>
+<span class="sd">    and return the number of rows modified.</span>
+<span class="sd">    &quot;&quot;&quot;</span> 
+    <span class="k">return</span> <span class="n">Update</span><span class="p">(</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span>
+        <span class="n">updates</span> <span class="o">=</span> <span class="n">updates</span><span class="p">,</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="n">where</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span><span class="o">.</span><span class="n">rowcount</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="column">Column</h2>
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+      <p>A Column is a reference to a column in a SQLite database. Because it
+is also an Expression, many of its logical operators are overridden
+so that you can build SQL Statements via Python logic like this:</p>
+<div class="highlight"><pre><span></span><code>john_does = db.people.select(where=
+    db.people.first_name == &#39;John&#39;
+    &amp; db.people.last_name == &#39;Doe&#39;
+)
+</code></pre></div>
+<p>For more information on this, see the Expression documentation.</p>
+
+<p><strong>Attributes:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>cid</code></td>
+        <td><code></code></td>
+        <td><p>column index number</p></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code></code></td>
+        <td><p>name of the column</p></td>
+      </tr>
+      <tr>
+        <td><code>type</code></td>
+        <td><code></code></td>
+        <td><p>string containing the SQL datatype of this column</p></td>
+      </tr>
+      <tr>
+        <td><code>notnull</code></td>
+        <td><code></code></td>
+        <td><p>int representing whether the column disallows null vals</p></td>
+      </tr>
+      <tr>
+        <td><code>dflt_value</code></td>
+        <td><code></code></td>
+        <td><p>the column's default value</p></td>
+      </tr>
+      <tr>
+        <td><code>pk</code></td>
+        <td><code></code></td>
+        <td><p>int representing whether the column is a primary key</p></td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.column.Column.__hash__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Return hash(self).</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/column.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.column.Column.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Column object constructor.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>constraints</code></td>
+        <td><code>str</code></td>
+        <td><p>a SQL expression defining this column, like
+'TEXT NOT NULL' or 'INTEGER PRIMARY KEY'</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>table</code></td>
+        <td><code></code></td>
+        <td><p>the table containing this column. If not provided, it
+will be set when the column is assigned to a table with
+Table.<strong>setattr</strong> or Table.<strong>setitem</strong>.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>str</code></td>
+        <td><p>the name of this column. If not provided, it will be
+set when this column is assigned to a table.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hissdb/column.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">constraints</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Column object constructor.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        constraints: a SQL expression defining this column, like</span>
+<span class="sd">            &#39;TEXT NOT NULL&#39; or &#39;INTEGER PRIMARY KEY&#39;</span>
+<span class="sd">        table: the table containing this column. If not provided, it</span>
+<span class="sd">            will be set when the column is assigned to a table with</span>
+<span class="sd">            Table.__setattr__ or Table.__setitem__.</span>
+<span class="sd">        name: the name of this column. If not provided, it will be</span>
+<span class="sd">            set when this column is assigned to a table.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_constraints</span> <span class="o">=</span> <span class="n">constraints</span>
+
+    <span class="k">if</span> <span class="n">table</span><span class="p">:</span>
+        <span class="n">table</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.column.Column.fetchall" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">fetchall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Convenience method to execute a Select statement targeting only
+this column, and return a list of the resulting values (rather
+than a list of one-item tuples).</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/column.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fetchall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convenience method to execute a Select statement targeting only</span>
+<span class="sd">    this column, and return a list of the resulting values (rather</span>
+<span class="sd">    than a list of one-item tuples).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">where</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.column.Column.fetchone" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">fetchone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Convenience method to execute a Select statement targeting only
+this column, and return the single resulting value (rather than
+a tuple with one item in it).</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/column.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fetchone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convenience method to execute a Select statement targeting only</span>
+<span class="sd">    this column, and return the single resulting value (rather than</span>
+<span class="sd">    a tuple with one item in it).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">where</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">val</span> <span class="k">else</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.column.Column.select" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Convenience method to execute a Select statement targeting only
+this column, and return the resulting Cursor object.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/column.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Cursor</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convenience method to execute a Select statement targeting only</span>
+<span class="sd">    this column, and return the resulting Cursor object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">],</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="n">where</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.column.Column.update" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_value</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Convenience method to execute an Update statement setting the
+value of this column, and return the number of rows modified.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/column.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="n">new_value</span><span class="p">:</span> <span class="n">Expression</span><span class="p">,</span>
+    <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convenience method to execute an Update statement setting the</span>
+<span class="sd">    value of this column, and return the number of rows modified.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+        <span class="n">updates</span><span class="o">=</span><span class="p">{</span><span class="bp">self</span><span class="p">:</span> <span class="n">new_value</span><span class="p">},</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="n">where</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="expressions">Expressions</h2>
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+      <p>Expressions are the building blocks of Statements. They provide two
+key features: First, they parameterize input values to avoid SQL
+injection; and second, they provide a set of methods and overloaded
+logical operators (e.g. '==', '&amp;', or '+') that allow users to
+build compound Expressions with Python syntax.</p>
+
+<p><strong>Attributes:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>tokens</code></td>
+        <td><code></code></td>
+        <td><p>the results of parameterizing each of the provided args.
+Any item that is not an Expression, Table, or Column object
+will be converted to a placeholder unless it is in the
+_literals whitelist.</p></td>
+      </tr>
+      <tr>
+        <td><code>placeholders</code></td>
+        <td><code></code></td>
+        <td><p>a dictionary of parameters that would need to be
+provided to sqlite3.execute() if this expression were a
+Statement of its own</p></td>
+      </tr>
+      <tr>
+        <td><code>necessary_tables</code></td>
+        <td><code></code></td>
+        <td><p>a list of Tables this expression references</p></td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="hissdb.expression.Expression.desc" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">desc</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Shortcut for use in ORDER BY clauses</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.__abs__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__abs__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite ABS() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__abs__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite ABS() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;ABS&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.__add__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add two numbers, concatenate two strings, or throw
+an error.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add two numbers, concatenate two strings, or throw</span>
+<span class="sd">    an error.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">othertype_</span> <span class="o">=</span> <span class="n">type_</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="n">selftype_</span> <span class="o">=</span> <span class="n">type_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">selftype_</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="ow">and</span> <span class="n">othertype_</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selftype_</span> <span class="ow">is</span> <span class="nb">str</span> <span class="ow">and</span> <span class="n">othertype_</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;||&#39;</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span>
+            <span class="s1">&#39;Addition is not supported between &#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">selftype_</span><span class="si">}</span><span class="s1"> value &quot;</span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s1">&quot; and </span><span class="si">{</span><span class="n">othertype_</span><span class="si">}</span><span class="s1"> &#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;value &quot;</span><span class="si">{</span><span class="n">other</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+        <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>args</code></td>
+        <td><code></code></td>
+        <td><p>the list of words or other values, in order, in the
+expression. Each one will be converted to a placeholder
+unless it is an Expression, Column, or Table object or
+is otherwise in the _literals whitelist. When the
+expression is converted to a string, the args (or their
+placeholders) will be joined with spaces.</p></td>
+        <td><code>()</code></td>
+      </tr>
+      <tr>
+        <td><code>func</code></td>
+        <td><code>str</code></td>
+        <td><p>the SQL function, if any, that the expression
+implements. If a func is provided, then the rendered
+expression will be enclosed in parentheses, preceded by
+the func string, and each arg will be separated by
+commas instead of spaces, to make them into function
+arguments rather than just words.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>prefix</code></td>
+        <td><code>str</code></td>
+        <td><p>only relevant if func is provided. The prefix will
+be rendered just after the opening parentheses, before
+the first arg, with no separating comma. This is meant
+to allow for syntax like the "DISTINCT" argument for
+aggregate functions.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Arguments:</span>
+<span class="sd">        args: the list of words or other values, in order, in the</span>
+<span class="sd">            expression. Each one will be converted to a placeholder</span>
+<span class="sd">            unless it is an Expression, Column, or Table object or</span>
+<span class="sd">            is otherwise in the _literals whitelist. When the</span>
+<span class="sd">            expression is converted to a string, the args (or their</span>
+<span class="sd">            placeholders) will be joined with spaces.</span>
+<span class="sd">        func: the SQL function, if any, that the expression</span>
+<span class="sd">            implements. If a func is provided, then the rendered</span>
+<span class="sd">            expression will be enclosed in parentheses, preceded by</span>
+<span class="sd">            the func string, and each arg will be separated by</span>
+<span class="sd">            commas instead of spaces, to make them into function</span>
+<span class="sd">            arguments rather than just words.</span>
+<span class="sd">        prefix: only relevant if func is provided. The prefix will</span>
+<span class="sd">            be rendered just after the opening parentheses, before</span>
+<span class="sd">            the first arg, with no separating comma. This is meant</span>
+<span class="sd">            to allow for syntax like the &quot;DISTINCT&quot; argument for</span>
+<span class="sd">            aggregate functions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">placeholders</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_necessary_tables</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="c1"># </span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="vm">__class__</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">placeholders</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">placeholders</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_necessary_tables</span> <span class="o">+=</span> <span class="n">arg</span><span class="o">.</span><span class="n">_necessary_tables</span>
+        <span class="k">elif</span> <span class="n">arg</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">==</span> <span class="s1">&#39;hissdb.column&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_necessary_tables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">_table</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">arg</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">==</span> <span class="s1">&#39;hissdb.table&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_necessary_tables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">arg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">arg</span> <span class="o">=</span> <span class="s1">&#39;NULL&#39;</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;Couldn</span><span class="se">\&#39;</span><span class="s1">t include &quot;</span><span class="si">{</span><span class="n">arg</span><span class="si">}</span><span class="s1">&quot; in expression; &#39;</span>
+                <span class="sa">f</span><span class="s1">&#39;no support for objects of type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">arg</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_literals</span><span class="p">:</span>
+            <span class="n">placeholder</span> <span class="o">=</span> <span class="n">next_placeholder</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">placeholders</span><span class="p">[</span><span class="n">placeholder</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span> <span class="o">=</span> <span class="n">arg</span>
+            <span class="n">arg</span> <span class="o">=</span> <span class="n">placeholder</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_necessary_tables</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_necessary_tables</span><span class="p">))</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.__invert__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__invert__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Return an expression that is True if and only if this one is not
+True. This works by replacing operators with their inverses
+(e.g. replacing '&gt;' with '&lt;=').</p>
+<p>When the expression to be inverted contains two sub-expressions
+joined with AND or OR, the sub-expressions are both inverted,
+and the AND is replaced with OR, or vice versa.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__invert__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return an expression that is True if and only if this one is not</span>
+<span class="sd">    True. This works by replacing operators with their inverses</span>
+<span class="sd">    (e.g. replacing &#39;&gt;&#39; with &#39;&lt;=&#39;).</span>
+
+<span class="sd">    When the expression to be inverted contains two sub-expressions</span>
+<span class="sd">    joined with AND or OR, the sub-expressions are both inverted,</span>
+<span class="sd">    and the AND is replaced with OR, or vice versa.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">func</span><span class="p">:</span>
+        <span class="n">operator</span> <span class="o">=</span> <span class="n">func</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">operator</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span> <span class="ow">and</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;OR&#39;</span><span class="p">:</span>
+        <span class="n">operator</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">5</span><span class="p">]]</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">operator</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">opposites</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;LIKE&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT LIKE&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;IN&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT IN&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;BETWEEN&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT BETWEEN&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;IS&#39;</span><span class="p">,</span> <span class="s1">&#39;IS NOT&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;EXISTS&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT EXISTS&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;&lt;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;==&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&gt;&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;AND&#39;</span><span class="p">,</span> <span class="s1">&#39;OR&#39;</span><span class="p">),</span>  <span class="c1"># also inverts sub-expressions, see below</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">opposites</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">operator</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">new_op</span> <span class="o">=</span> <span class="n">a</span> <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="n">b</span> <span class="k">else</span> <span class="n">b</span>
+        <span class="k">if</span> <span class="n">func</span><span class="p">:</span>
+            <span class="n">func</span> <span class="o">=</span> <span class="n">new_op</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_op</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unsure how to invert expression &#39;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;OR&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">~</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;AND&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">~</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">|</span> <span class="o">~</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.__mod__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__mod__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>LIKE operator for strings, modulo operator otherwise</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__mod__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="s2">&quot;LIKE operator for strings, modulo operator otherwise&quot;</span>
+    <span class="k">if</span> <span class="n">type_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;LIKE&#39;</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.__str__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Text of the expression that will be inserted into a SQL
+statement, with placeholders to avoid injection</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Text of the expression that will be inserted into a SQL</span>
+<span class="sd">    statement, with placeholders to avoid injection</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">joiner</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="k">else</span> <span class="s1">&#39; &#39;</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">joiner</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span><span class="p">])</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;( &#39;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; )&#39;</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">prefix</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s1">)&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">output</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.avg" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite AVG() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite AVG() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;AVG&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;DISTINCT&#39;</span> <span class="k">if</span> <span class="n">distinct</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.ceil" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite CEIL() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ceil</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite CEIL() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;CEIL&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.count" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite COUNT() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite COUNT() function&quot;</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;DISTINCT&#39;</span> <span class="k">if</span> <span class="n">distinct</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;COUNT&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.exists" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite EXISTS() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite EXISTS() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;EXISTS&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.exp" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite EXP() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite EXP() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;EXP&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.floor" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">floor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite FLOOR() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">floor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite FLOOR() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;FLOOR&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.ln" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ln</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite LN() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ln</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite LN() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;LN&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.max" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite MAX() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite MAX() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;MAX&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;DISTINCT&#39;</span> <span class="k">if</span> <span class="n">distinct</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.min" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite MIN() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distinct</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite MIN() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;MIN&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.pow" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exponent</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite POWER() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exponent</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite POWER() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exponent</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;POWER&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.render" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">render</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Text of the expression with placeholders filled in</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;Text of the expression with placeholders filled in&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">placeholders</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">text</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.round" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite ROUND() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">round</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite ROUND() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;ROUND&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.expression.Expression.sqrt" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>SQLite SQRT() function</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hissdb/expression.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&quot;SQLite SQRT() function&quot;</span>
+    <span class="k">return</span> <span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s1">&#39;SQRT&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="statements">Statements</h2>
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+      <p>base class that all Statements inherit from</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.statements.BaseStatement.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="p">{},</span> <span class="n">order_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">autojoin</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>BaseStatement class constructor. There should be no need for a
+user to use this directly rather than a subclass, but all
+subclasses accept the following arguments in their constructors.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>table</code></td>
+        <td><code></code></td>
+        <td><p>the Table object this statement relates to</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>where</code></td>
+        <td><code>Expression</code></td>
+        <td><p>an Expression object representing a WHERE clause
+in SQL.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>join</code></td>
+        <td><code>dict</code></td>
+        <td><p>a dictionary where each key is a Column object to join
+on the condition that the corresponding Expression is
+met.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+      <tr>
+        <td><code>order_by</code></td>
+        <td><code>tuple</code></td>
+        <td><p>a Column, an Expression object representing a
+virtual column, or a tuple containing multiple of either
+of those things. To sort descending, you can use the
+'desc' property of any Column or Expression, e.g.
+"order_by=db.users.first_name.desc"</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>limit</code></td>
+        <td><code>int</code></td>
+        <td><p>an int or an Expression representing an int, setting
+the maximum number of rows to select or modify</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>offset</code></td>
+        <td><code>int</code></td>
+        <td><p>an int or an Expression representing an int, which
+sets which row to on.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>autojoin</code></td>
+        <td><code>bool</code></td>
+        <td><p>whether HissDB should use the database's foreign
+key relationships to automatically join any tables that
+the statement requires. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hissdb/statements.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="n">table</span><span class="p">,</span>
+    <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">join</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="n">order_by</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Expression</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">autojoin</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    BaseStatement class constructor. There should be no need for a</span>
+<span class="sd">    user to use this directly rather than a subclass, but all</span>
+<span class="sd">    subclasses accept the following arguments in their constructors.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        table: the Table object this statement relates to</span>
+<span class="sd">        where: an Expression object representing a WHERE clause</span>
+<span class="sd">            in SQL.</span>
+<span class="sd">        join: a dictionary where each key is a Column object to join</span>
+<span class="sd">            on the condition that the corresponding Expression is</span>
+<span class="sd">            met.</span>
+<span class="sd">        order_by: a Column, an Expression object representing a</span>
+<span class="sd">            virtual column, or a tuple containing multiple of either</span>
+<span class="sd">            of those things. To sort descending, you can use the</span>
+<span class="sd">            &#39;desc&#39; property of any Column or Expression, e.g.</span>
+<span class="sd">            &quot;order_by=db.users.first_name.desc&quot;</span>
+<span class="sd">        limit: an int or an Expression representing an int, setting</span>
+<span class="sd">            the maximum number of rows to select or modify</span>
+<span class="sd">        offset: an int or an Expression representing an int, which</span>
+<span class="sd">            sets which row to on.</span>
+<span class="sd">        autojoin: whether HissDB should use the database&#39;s foreign</span>
+<span class="sd">            key relationships to automatically join any tables that</span>
+<span class="sd">            the statement requires. Defaults to True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">table</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="n">where</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">join</span> <span class="o">=</span> <span class="n">join</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">order_by</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Expression</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">limit</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">offset</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">autojoin</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">autojoin</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">unknown_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+
+    <span class="k">if</span> <span class="n">order_by</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">order_by</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="nb">set</span><span class="p">]:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">order_by</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">order_by</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">order_by</span> <span class="o">=</span> <span class="n">order_by</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+      <p>SQL statement to insert a single row into a table</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.statements.Insert.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="p">{},</span> <span class="n">or_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Insert statement constructor. Any unknown keyword arguments will
+be added to the row dict.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>table</code></td>
+        <td><code></code></td>
+        <td><p>Table object to insert the row into</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>row</code></td>
+        <td><code>dict</code></td>
+        <td><p>dict of values representing the row to insert</p></td>
+        <td><code>{}</code></td>
+      </tr>
+      <tr>
+        <td><code>or_</code></td>
+        <td><code>str</code></td>
+        <td><p>what to do when the insert statement fails due to a
+table constraint. Options are 'ABORT', 'FAIL', 'IGNORE',
+'REPLACE', and 'ROLLBACK'.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hissdb/statements.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">row</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{},</span> <span class="n">or_</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Insert statement constructor. Any unknown keyword arguments will</span>
+<span class="sd">    be added to the row dict.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        table: Table object to insert the row into</span>
+<span class="sd">        row: dict of values representing the row to insert</span>
+<span class="sd">        or_: what to do when the insert statement fails due to a</span>
+<span class="sd">            table constraint. Options are &#39;ABORT&#39;, &#39;FAIL&#39;, &#39;IGNORE&#39;,</span>
+<span class="sd">            &#39;REPLACE&#39;, and &#39;ROLLBACK&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="n">table</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">or_</span> <span class="o">=</span> <span class="n">or_</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">unknown_kwargs</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unknown_kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">Expression</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+      <p>SQL statement to return some or all rows meeting given criteria</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.statements.Select.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">having</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Select statement constructor.</p>
+<p>Any unknown keyword arguments are interpreted as WHERE
+conditions constraining the value of a column in the given
+table. For instance, 'first_name="Jerry"' is equivalent to
+'where=[table].first_name == "Jerry"'</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>table</code></td>
+        <td><code></code></td>
+        <td><p>the Table object from which to select values</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>cols</code></td>
+        <td><code>list</code></td>
+        <td><p>list of Column objects, or Expressions representing
+virtual columns, that the statement should select. For
+ease of use, columns can also be referenced via names
+rather than Column objects.</p></td>
+        <td><code>&#39;*&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>where</code></td>
+        <td><code>Expression</code></td>
+        <td><p>Expression constraining which rows to select</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>group_by</code></td>
+        <td><code>list</code></td>
+        <td><p>equivalent to SQL 'GROUP BY' clause</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>having</code></td>
+        <td><code>Expression</code></td>
+        <td><p>equivalent to SQL 'HAVING' clause</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hissdb/statements.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="n">table</span><span class="p">,</span>
+    <span class="n">cols</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Column</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span>
+    <span class="n">where</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">group_by</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Column</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">having</span><span class="p">:</span> <span class="n">Expression</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Select statement constructor.</span>
+
+<span class="sd">    Any unknown keyword arguments are interpreted as WHERE</span>
+<span class="sd">    conditions constraining the value of a column in the given</span>
+<span class="sd">    table. For instance, &#39;first_name=&quot;Jerry&quot;&#39; is equivalent to</span>
+<span class="sd">    &#39;where=[table].first_name == &quot;Jerry&quot;&#39;</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        table: the Table object from which to select values</span>
+<span class="sd">        cols: list of Column objects, or Expressions representing</span>
+<span class="sd">            virtual columns, that the statement should select. For</span>
+<span class="sd">            ease of use, columns can also be referenced via names</span>
+<span class="sd">            rather than Column objects.</span>
+<span class="sd">        where: Expression constraining which rows to select</span>
+<span class="sd">        group_by: equivalent to SQL &#39;GROUP BY&#39; clause</span>
+<span class="sd">        having: equivalent to SQL &#39;HAVING&#39; clause</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">table</span> <span class="o">=</span> <span class="n">table</span><span class="p">,</span> <span class="n">where</span> <span class="o">=</span> <span class="n">where</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">raw_columns</span> <span class="o">=</span> <span class="n">cols</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unknown_kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">new_criteria</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">_columns</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">where</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">where</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">where</span> <span class="o">&amp;</span> <span class="n">new_criteria</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">where</span> <span class="o">=</span> <span class="n">new_criteria</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_columns</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_columns</span><span class="p">)</span> <span class="ow">is</span> <span class="n">Expression</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_columns</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_resolve_column</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_columns</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">group_by</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">group_by</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">set</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">group_by</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_resolve_column</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">group_by</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">group_by</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_column</span><span class="p">(</span><span class="n">group_by</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">group_by</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">having</span> <span class="o">=</span> <span class="n">having</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+      <p>SQL statement to delete some or all rows meeting given criteria</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+    <div class="doc doc-contents first">
+
+      <p>SQL statement to efficiently insert a list or generator of rows</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="hissdb.statements.InsertMany.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">or_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>InsertMany statement constructor.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>cols</code></td>
+        <td><code>tuple</code></td>
+        <td><p>tuple of Column objects (or strings representing them)
+corresponding to the columns for which values will
+be provided.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>rows</code></td>
+        <td><code>list</code></td>
+        <td><p>list or generator containing each row to insert. A row
+is a tuple whose values each represent the corresponding
+value in cols.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>or_</code></td>
+        <td><code>str</code></td>
+        <td><p>what to do when the insert statement fails due to a
+table constraint. Options are 'ABORT', 'FAIL', 'IGNORE',
+'REPLACE', and 'ROLLBACK'.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hissdb/statements.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="n">table</span><span class="p">,</span>
+    <span class="n">cols</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Column</span><span class="p">],</span>
+    <span class="n">rows</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">],</span>
+    <span class="n">or_</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    InsertMany statement constructor.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        cols: tuple of Column objects (or strings representing them)</span>
+<span class="sd">            corresponding to the columns for which values will</span>
+<span class="sd">            be provided.</span>
+<span class="sd">        rows: list or generator containing each row to insert. A row</span>
+<span class="sd">            is a tuple whose values each represent the corresponding</span>
+<span class="sd">            value in cols.</span>
+<span class="sd">        or_: what to do when the insert statement fails due to a</span>
+<span class="sd">            table constraint. Options are &#39;ABORT&#39;, &#39;FAIL&#39;, &#39;IGNORE&#39;,</span>
+<span class="sd">            &#39;REPLACE&#39;, and &#39;ROLLBACK&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">table</span> <span class="o">=</span> <span class="n">table</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">or_</span> <span class="o">=</span> <span class="n">or_</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_resolve_column</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> <span class="n">rows</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Getting Started
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": "0.0.1"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+    
+  </body>
+</html>

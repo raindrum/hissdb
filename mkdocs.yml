@@ -1,0 +1,38 @@
+site_name: HissDB
+repo_url: https://github.com/raindrum/hissdb
+docs_dir: docs_source
+site_dir: docs
+
+theme:
+  name: material
+  favicon: assets/favicon.png
+  palette:
+    scheme: slate
+    primary: teal
+    accent: light blue
+  icon:
+    repo: fontawesome/brands/github
+
+edit_uri: edit/main/docs_source
+
+plugins:
+- search
+- mkdocstrings:
+    default_handler: python
+    handlers:
+      python:
+        rendering:
+          show_root_heading: no
+          show_root_full_path: no
+          show_root_toc_entry: no
+          show_object_full_path: no
+          heading_level: 3
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+extra:
+  version: 0.0.1
+  history_buttons: false

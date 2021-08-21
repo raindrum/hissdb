@@ -1,0 +1,9 @@
+*.sh
+*.egg-info/
+**/__pycache__/*
+**/.pytest_cache/*
+**/.mypy_cache/*
+**.sync-conflict
+build/
+demo/
+dist/
