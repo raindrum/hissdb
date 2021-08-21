@@ -42,7 +42,7 @@ class Table:
     @classmethod
     def _from_schema(cls, schema: str):
         # normalize schema to something parseable with small regex
-        schema = sub('\s+', ' ', schema)
+        schema = sub(r'\s+', ' ', schema)
         schema = schema.replace('"', '').replace("'", '')
         schema = schema.replace('( ', '(').replace(' )', ')')
         
