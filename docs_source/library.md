@@ -16,16 +16,26 @@
 
 ::: hissdb.expression.Expression
 
-## Statements
+## BaseStatement
 
 ::: hissdb.BaseStatement
 
+## Insert
+
 ::: hissdb.Insert
+
+## Select
 
 ::: hissdb.Select
 
+## Update
+
 ::: hissdb.Update
 
+## Delete
+
 ::: hissdb.Delete
+
+## InsertMany
 
 ::: hissdb.InsertMany
