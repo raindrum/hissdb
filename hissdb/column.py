@@ -57,8 +57,8 @@ class Column(Expression):
     
     def select(self, where: Expression = None, **kwargs) -> Cursor:
         """
-        Convenience method to execute a Select statement targeting only
-        this column, and return the resulting Cursor object.
+        Convenience method to make a Select statement targeting only
+        this column.
         """
         return self._table.select(
             cols = [self],
@@ -72,7 +72,7 @@ class Column(Expression):
         this column, and return the single resulting value (rather than
         a tuple with one item in it).
         """
-        val = self.select(where, **kwargs).fetchone()
+        val = self.select(where, **kwargs).execute().fetchone()
         return val[0] if val else None
     
     def fetchall(self, where: Expression = None, **kwargs):
@@ -81,7 +81,7 @@ class Column(Expression):
         this column, and return a list of the resulting values (rather
         than a list of one-item tuples).
         """
-        vals = self.select(where, **kwargs).fetchall()
+        vals = self.select(where, **kwargs).execute().fetchall()
         return [val[0] for val in vals]
     
     def update(self,

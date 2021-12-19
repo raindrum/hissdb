@@ -6,279 +6,281 @@ For function documentation, see
 https://sqlite.org/lang_corefunc.html#glob
 """
 
-# internal imports
-from .expression import Expression as expr
+from .expression import Expression as Expr
 
-def acos(x) -> expr:
-    return expr(x, func='ACOS')
+def acos(x) -> Expr:
+    return Expr(x, func='ACOS')
 
-def acosh(x) -> expr:
-    return expr(x, func='ACOSH')
+def acosh(x) -> Expr:
+    return Expr(x, func='ACOSH')
 
-def asin(x) -> expr:
-    return expr(x, func='ASIN')
+def asin(x) -> Expr:
+    return Expr(x, func='ASIN')
 
-def asinh(x) -> expr:
-    return expr(x, func='ASINH')
+def asinh(x) -> Expr:
+    return Expr(x, func='ASINH')
 
-def atan(x) -> expr:
-    return expr(x, func='ATAN')
+def atan(x) -> Expr:
+    return Expr(x, func='ATAN')
 
-def atan2(x, y) -> expr:
-    return expr(x, y, func='ATAN2')
+def atan2(x, y) -> Expr:
+    return Expr(x, y, func='ATAN2')
 
-def atanh(x) -> expr:
-    return expr(x, func='ATANH')
+def atanh(x) -> Expr:
+    return Expr(x, func='ATANH')
 
-def avg(x, distinct: bool = False) -> expr:
-    return expr(x, func='AVG', prefix='DISTINCT' if distinct else None)
+def avg(x, distinct: bool = False) -> Expr:
+    return Expr(x, func='AVG', prefix='DISTINCT' if distinct else None)
 
-def ceil(x) -> expr:
-    return expr(x, func='CEIL')
+def ceil(x) -> Expr:
+    return Expr(x, func='CEIL')
 
-def changes() -> expr:
-    return expr(func='CHANGES')
+def changes() -> Expr:
+    return Expr(func='CHANGES')
 
-def char(*args) -> expr:
-    return expr(*args, func='CHAR')
+def char(*args) -> Expr:
+    return Expr(*args, func='CHAR')
 
-def coalesce(*args) -> expr:
-    return expr(*args, func='COALESCE')
+def coalesce(*args) -> Expr:
+    return Expr(*args, func='COALESCE')
 
-def cos(x) -> expr:
-    return expr(x, func='COS')
+def cos(x) -> Expr:
+    return Expr(x, func='COS')
 
-def cosh(x) -> expr:
-    return expr(x, func='COSH')
+def cosh(x) -> Expr:
+    return Expr(x, func='COSH')
     
-def count(*args, distinct: bool = False) -> expr:
+def count(*args, distinct: bool = False) -> Expr:
     args = args or ['*']
-    return expr(
+    return Expr(
         *args,
         func = 'COUNT',
         prefix = ('DISTINCT' if distinct else None),
     )
 
-def date(time_value, *modifiers) -> expr:
-    return expr(time_value, *modifiers, func='DATE')
+def date(time_value, *modifiers) -> Expr:
+    return Expr(time_value, *modifiers, func='DATE')
 
-def datetime(time_value, *modifiers) -> expr:
-    return expr(time_value, *modifiers, func='DATETIME')
+def datetime(time_value, *modifiers) -> Expr:
+    return Expr(time_value, *modifiers, func='DATETIME')
 
-def degrees(x) -> expr:
-    return expr(x, func='DEGREES')
+def degrees(x) -> Expr:
+    return Expr(x, func='DEGREES')
 
-def exp(x) -> expr:
-    return expr(x, func='EXP')
+def exists(x) -> Expr:
+    return Expr(x, func='EXISTS')
 
-def floor(x) -> expr:
-    return expr(x, func='FLOOR')
+def exp(x) -> Expr:
+    return Expr(x, func='EXP')
+
+def floor(x) -> Expr:
+    return Expr(x, func='FLOOR')
     
-def glob(*args) -> expr:
-    return expr(*args, func='GLOB')
+def glob(*args) -> Expr:
+    return Expr(*args, func='GLOB')
 
-def group_concat(x, y = None, distinct: bool = False) -> expr:
+def group_concat(x, y = None, distinct: bool = False) -> Expr:
     prefix = 'DISTINCT' if distinct else None
     if y:
-        return expr(x, y, func='GROUP_CONCAT', prefix=prefix)
+        return Expr(x, y, func='GROUP_CONCAT', prefix=prefix)
     else:
-        return expr(x, func='GROUP_CONCAT', prefix=prefix)
+        return Expr(x, func='GROUP_CONCAT', prefix=prefix)
 
-def hex(x) -> expr:
-    return expr(x, func='HEX')
+def hex(x) -> Expr:
+    return Expr(x, func='HEX')
 
-def ifnull(x, y) -> expr:
-    return expr(x, y, func='IFNULL')
+def ifnull(x, y) -> Expr:
+    return Expr(x, y, func='IFNULL')
 
-def iif(x, y, z) -> expr:
-    return expr(x, y, z, func='IIF')
+def iif(x, y, z) -> Expr:
+    return Expr(x, y, z, func='IIF')
 
-def instr(x, y) -> expr:
-    return expr(x, y, func='INSTR')
+def instr(x, y) -> Expr:
+    return Expr(x, y, func='INSTR')
 
-def julianday(time_value, *modifiers) -> expr:
-    return expr(time_value, *modifiers, func='JULIANDAY')
+def julianday(time_value, *modifiers) -> Expr:
+    return Expr(time_value, *modifiers, func='JULIANDAY')
 
-def length(x) -> expr:
-    return expr(x, func='LENGTH')
+def length(x) -> Expr:
+    return Expr(x, func='LENGTH')
 
-def like(x, y, z = None) -> expr:
+def like(x, y, z = None) -> Expr:
     if z:
-        return expr(x, y, z, func='LIKE')
+        return Expr(x, y, z, func='LIKE')
     else:
-        return expr(x, y, func='LIKE')
+        return Expr(x, y, func='LIKE')
 
-def likelihood(x, y) -> expr:
-    return expr(x, y, func='LIKELIHOOD')
+def likelihood(x, y) -> Expr:
+    return Expr(x, y, func='LIKELIHOOD')
 
-def likely(x) -> expr:
-    return expr(x, func='LIKELY')
+def likely(x) -> Expr:
+    return Expr(x, func='LIKELY')
 
-def ln(x) -> expr:
-    return expr(x, func='LN')
+def ln(x) -> Expr:
+    return Expr(x, func='LN')
 
-def load_extension(x, y = None) -> expr:
+def load_extension(x, y = None) -> Expr:
     if y:
-        return expr(x, y, func='LOAD_EXTENSION')
+        return Expr(x, y, func='LOAD_EXTENSION')
     else:
-        return expr(x, func='LOAD_EXTENSION')
+        return Expr(x, func='LOAD_EXTENSION')
 
-def log(x, y = None) -> expr:
+def log(x, y = None) -> Expr:
     if y:
-        return expr(x, y, func='LOG')
+        return Expr(x, y, func='LOG')
     else:
-        return expr(x, func='LOG')
+        return Expr(x, func='LOG')
 
-def log10(x) -> expr:
-    return expr(x, func='LOG10')
+def log10(x) -> Expr:
+    return Expr(x, func='LOG10')
 
-def log2(x) -> expr:
-    return expr(x, func='LOG2')
+def log2(x) -> Expr:
+    return Expr(x, func='LOG2')
 
-def lower(x) -> expr:
-    return expr(x, func='LOWER')
+def lower(x) -> Expr:
+    return Expr(x, func='LOWER')
 
-def ltrim(x, y = None) -> expr:
+def ltrim(x, y = None) -> Expr:
     if y:
-        return expr(x, y, func='LTRIM')
+        return Expr(x, y, func='LTRIM')
     else:
-        return expr(x, func='LTRIM')
+        return Expr(x, func='LTRIM')
 
-def max(*args, distinct: bool = False) -> expr:
-    return expr(
+def max(*args, distinct: bool = False) -> Expr:
+    return Expr(
         *args,
         func='MAX',
         prefix='DISTINCT' if distinct else None
     )
 
-def min(*args, distinct: bool = False) -> expr:
-    return expr(
+def min(*args, distinct: bool = False) -> Expr:
+    return Expr(
         *args,
         func='MIN',
         prefix='DISTINCT' if distinct else None
     )
 
-def mod(x) -> expr:
-    return expr(x, func='MOD')
+def mod(x) -> Expr:
+    return Expr(x, func='MOD')
 
-def nullif(x, y) -> expr:
-    return expr(x, y, func='NULLIF')
+def nullif(x, y) -> Expr:
+    return Expr(x, y, func='NULLIF')
 
-def pi() -> expr:
-    return expr(func='PI')
+def pi() -> Expr:
+    return Expr(func='PI')
 
-def pow(x, y) -> expr:
-    return expr(x, y, func='POW')
+def pow(x, y) -> Expr:
+    return Expr(x, y, func='POW')
 
-def power(x, y) -> expr:
-    return expr(x, y, func='POWER')
+def power(x, y) -> Expr:
+    return Expr(x, y, func='POWER')
 
-def printf(format_str, *placeholders) -> expr:
-    return expr(format_str, *placeholders, func='PRINTF')
+def printf(format_str, *placeholders) -> Expr:
+    return Expr(format_str, *placeholders, func='PRINTF')
 
-def quote(x) -> expr:
-    return expr(x, func='QUOTE')
+def quote(x) -> Expr:
+    return Expr(x, func='QUOTE')
 
-def radians(x) -> expr:
-    return expr(x, func='RADIANS')
+def radians(x) -> Expr:
+    return Expr(x, func='RADIANS')
 
-def random() -> expr:
-    return expr(func='RANDOM')
+def random() -> Expr:
+    return Expr(func='RANDOM')
 
-def randomblob(n) -> expr:
-    return expr(n, func='RANDOMBLOB')
+def randomblob(n) -> Expr:
+    return Expr(n, func='RANDOMBLOB')
 
-def replace(x, y, z) -> expr:
-    return expr(x, y, z, func='REPLACE')
+def replace(x, y, z) -> Expr:
+    return Expr(x, y, z, func='REPLACE')
 
-def round(x, y = None) -> expr:
+def round(x, y = None) -> Expr:
     if y:
-        return expr(x, y, func='ROUND')
+        return Expr(x, y, func='ROUND')
     else:
-        return expr(x, func='ROUND')
+        return Expr(x, func='ROUND')
 
-def rtrim(x, y = None) -> expr:
+def rtrim(x, y = None) -> Expr:
     if y:
-        return expr(x, y, func='RTRIM')
+        return Expr(x, y, func='RTRIM')
     else:
-        return expr(x, func='RTRIM')
+        return Expr(x, func='RTRIM')
 
-def sign(x) -> expr:
-    return expr(x, func='SIGN')
+def sign(x) -> Expr:
+    return Expr(x, func='SIGN')
 
-def sin(x) -> expr:
-    return expr(x, func='SIN')
+def sin(x) -> Expr:
+    return Expr(x, func='SIN')
 
-def sinh(x) -> expr:
-    return expr(x, func='SINH')
+def sinh(x) -> Expr:
+    return Expr(x, func='SINH')
 
-def soundex(x) -> expr:
-    return expr(x, func='SOUNDEX')
+def soundex(x) -> Expr:
+    return Expr(x, func='SOUNDEX')
 
-def sqlite_compileoption_get(n) -> expr:
-    return expr(n, func='SQLITE_COMPILEOPTION_GET')
+def sqlite_compileoption_get(n) -> Expr:
+    return Expr(n, func='SQLITE_COMPILEOPTION_GET')
 
-def sqlite_compileoption_used(x) -> expr:
-    return expr(x, func='SQLITE_COMPILEOPTION_USED')
+def sqlite_compileoption_used(x) -> Expr:
+    return Expr(x, func='SQLITE_COMPILEOPTION_USED')
 
-def sqlite_offset(x) -> expr:
-    return expr(x, func='SQLITE_OFFSET')
+def sqlite_offset(x) -> Expr:
+    return Expr(x, func='SQLITE_OFFSET')
 
-def sqlite_source_id() -> expr:
-    return expr(func='SQLITE_SOURCE_ID')
+def sqlite_source_id() -> Expr:
+    return Expr(func='SQLITE_SOURCE_ID')
 
-def sqlite_version() -> expr:
-    return expr(func='SQLITE_VERSION')
+def sqlite_version() -> Expr:
+    return Expr(func='SQLITE_VERSION')
 
-def strftime(format_str, time_value, *modifiers) -> expr:
-    return expr(format_str, time_value, *modifiers, func='STRFTIME')
+def strftime(format_str, time_value, *modifiers) -> Expr:
+    return Expr(format_str, time_value, *modifiers, func='STRFTIME')
 
-def substr(x, y, z = None) -> expr:
+def substr(x, y, z = None) -> Expr:
     if z:
-        return expr(x, y, z, func='SUBSTR')
+        return Expr(x, y, z, func='SUBSTR')
     else:
-        return expr(x, y, func='SUBSTR')
+        return Expr(x, y, func='SUBSTR')
 
-def sum(x, distinct: bool = False) -> expr:
-    return expr(x, func='SUM', prefix='DISTINCT' if distinct else None)
+def sum(x, distinct: bool = False) -> Expr:
+    return Expr(x, func='SUM', prefix='DISTINCT' if distinct else None)
 
-def tan(x) -> expr:
-    return expr(x, func='TAN')
+def tan(x) -> Expr:
+    return Expr(x, func='TAN')
 
-def tanh(x) -> expr:
-    return expr(x, func='TANH')
+def tanh(x) -> Expr:
+    return Expr(x, func='TANH')
 
-def time(time_value, *modifiers) -> expr:
-    return expr(time_value, *modifiers, func='TIME')
+def time(time_value, *modifiers) -> Expr:
+    return Expr(time_value, *modifiers, func='TIME')
 
-def total(x, distinct: bool = False) -> expr:
-    return expr(
+def total(x, distinct: bool = False) -> Expr:
+    return Expr(
         x, func='TOTAL', prefix='DISTINCT' if distinct else None
      )
 
-def total_changes() -> expr:
-    return expr(func='SQLITE_VERSION')
+def total_changes() -> Expr:
+    return Expr(func='SQLITE_VERSION')
 
-def trim(x, y = None) -> expr:
+def trim(x, y = None) -> Expr:
     if y:
-        return expr(x, y, func='TRIM')
+        return Expr(x, y, func='TRIM')
     else:
-        return expr(x, func='TRIM')
+        return Expr(x, func='TRIM')
 
-def trunc(x) -> expr:
-    return expr(x, func='TRUNC')
+def trunc(x) -> Expr:
+    return Expr(x, func='TRUNC')
 
-def typeof(x) -> expr:
-    return expr(x, func='TYPEOF')
+def typeof(x) -> Expr:
+    return Expr(x, func='TYPEOF')
 
-def unicode(x) -> expr:
-    return expr(x, func='UNICODE')
+def unicode(x) -> Expr:
+    return Expr(x, func='UNICODE')
 
-def unlikely(x) -> expr:
-    return expr(x, func='UNLIKELY')
+def unlikely(x) -> Expr:
+    return Expr(x, func='UNLIKELY')
 
-def upper(x) -> expr:
-    return expr(x, func='UPPER')
+def upper(x) -> Expr:
+    return Expr(x, func='UPPER')
 
-def zeroblob(x) -> expr:
-    return expr(x, func='ZEROBLOB')
+def zeroblob(x) -> Expr:
+    return Expr(x, func='ZEROBLOB')

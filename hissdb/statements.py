@@ -15,6 +15,9 @@ class BaseStatement(Expression):
         order_by: tuple[Expression] = None,
         limit: int = None,
         offset: int = None,
+        # union: __class__ = None,
+        # union_all: __class__ = None,
+        # intersect: __class__ = None,
         autojoin: bool = True,
         **kwargs,
     ):
@@ -49,11 +52,15 @@ class BaseStatement(Expression):
         self.order_by: tuple[Expression] = None
         self.limit: int = limit
         self.offset: int = offset
+        # self.union = union
+        # self.union_all = union_all
+        # self.intersect = intersect
+        
         self.autojoin: bool = autojoin
         self.unknown_kwargs = kwargs
         
         if order_by and type(order_by) not in [list, tuple, set]:
-            self.order_by = tuple(order_by)
+            self.order_by = [order_by]
         else:
             self.order_by = order_by
     
@@ -72,10 +79,11 @@ class BaseStatement(Expression):
             f"'{self}', {self.placeholders})"
         )
     
-    
     def __call__(self) -> Cursor:
         return self.execute()
     
+    def contains(self, other):
+        return Expression(other, Expression(self, func='IN '))
     
     @property
     def _db(self):
@@ -92,13 +100,19 @@ class BaseStatement(Expression):
         else:
             joins = self.join
         
+        if self.order_by:
+            order_str = ', '.join([str(o) for o in self.order_by])
+        
         return list(filter(lambda x: bool(x), [
             f'FROM {self.table}',
             *[f'JOIN {k} ON {v}' for k,v in joins.items()],
             (f'WHERE {self.where}' if self.where else ''),
+            (f'ORDER BY {order_str}' if self.order_by else ''),
             (f'LIMIT {self.limit}' if self.limit else ''),
             (f'OFFSET {self.offset}' if self.offset else ''),
-            (f'ORDER BY {", ".join(self.order_by)}' if self.order_by else ''),
+            # (f'UNION\n{self.union}' if self.union else ''),
+            # (f'UNION ALL\n{self.union_all}' if self.union_all else ''),
+            # (f'INTERSECT\n{self.intersect}' if self.intersect else ''),
         ]))
     
     @property
@@ -307,6 +321,10 @@ class Select(BaseStatement):
                 self.group_by = self._resolve_column(group_by)
         else:
             self.group_by = None
+            if having:
+                raise SyntaxError(
+                    "statements can't include `having` without `group_by`"
+                )
         self.having = having
     
     @property
@@ -324,19 +342,28 @@ class Select(BaseStatement):
                 else:
                     group_by_clause = f'GROUP BY {self.group_by}'
             
-            # find the WHERE clause, if present, to append before it
-            group_by_clause = f'GROUP BY {self.group_by}'
-            for i, clause in enumerate(clauses):
-                if clause.startswith('WHERE'):
+            # insert *before* LIMIT or ORDER BY clauses, if present
+            group_by_clause = f'GROUP BY {self.group_by}'            
+            for i, cl in enumerate(clauses):
+                if cl.startswith('ORDER BY') or cl.startswith('LIMIT'):
                     clauses.insert(i, group_by_clause)
+                    if self.having is not None:
+                        clauses.insert(i+1, f'HAVING {self.having}')
                     break
             else:
                 clauses.append(group_by_clause)
-            
-        if self.having:
-            clauses.append(f'HAVING {self.having}')
+                if self.having is not None:
+                    clauses.append(f'HAVING {self.having}')
         
         return clauses
+    
+    def __and__(self, other):
+        return Intersect(self, other)
+    
+    def __or__(self, other):
+        return Union(self, other)
+    
+        
 
 
 class Update(BaseStatement):
@@ -369,6 +396,47 @@ class Update(BaseStatement):
                 break
         return clauses
 
+
+########################################################################
+# meta statements
+########################################################################
+
+class Union(Select):
+    joiner_clause = 'UNION'
+    
+    def __init__(self, *statements):
+        self.statements = statements
+    
+    @property
+    def table(self):
+        return self.statements[0].table
+    
+    @property
+    def placeholders(self):
+        results = self.statements[0].placeholders
+        for statement in self.statements[1:]:
+            results.update(statement.placeholders)
+        return results
+    
+    @property
+    def clauses(self):
+        results = copy(self.statements[0].clauses)
+        for statement in self.statements[1:]:
+            results.append(self.joiner_clause)
+            results += statement.clauses
+        return results
+
+class UnionAll(Union):
+    joiner_clause = 'UNION ALL'
+
+class Intersect(Union):
+    joiner_clause = 'INTERSECT'
+
+class Minus(Union):
+    joiner_clause = 'MINUS'
+
+class Except(Union):
+    joiner_clause = 'EXCEPT'
 
 ########################################################################
 # utility functions

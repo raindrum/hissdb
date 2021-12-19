@@ -2,10 +2,6 @@
 from functools import cached_property
 from copy import copy
 
-MAX_PLACEHOLDER = 9999999
-CURRENT_PLACEHOLDER = 0
-FUNCTIONS = {}
-
 class Expression:
     """
     Expressions are the building blocks of Statements. They provide two
@@ -60,8 +56,8 @@ class Expression:
         self.tokens = []
         self.func = func
         self.prefix = prefix
+        
         for arg in args:
-            # 
             if issubclass(arg.__class__, __class__):
                 self.placeholders.update(arg.placeholders)
                 self._necessary_tables += arg._necessary_tables
@@ -82,6 +78,10 @@ class Expression:
                 self.placeholders[placeholder[1:]] = arg
                 arg = placeholder
             
+            # add parentheses to statements
+            if arg.__class__.__module__ == 'hissdb.statements':
+                arg = f'({str(arg)})'
+            
             self.tokens.append(arg)
             
         self._necessary_tables = list(set(self._necessary_tables))
@@ -90,14 +90,15 @@ class Expression:
     def __str__(self):
         """
         Text of the expression that will be inserted into a SQL
-        statement, with placeholders to avoid injection
+        statement, with strings and integers replaced with placeholders
+        unless they are listed in Expression._literals
         """
         joiner = ', ' if self.func else ' '
         output = joiner.join([str(t) for t in self.tokens])
         output = output.replace('( ', '(').replace(' )', ')')
         if self.prefix:
             output = f'{self.prefix} {output}'
-        if self.func:
+        if self.func is not None:
             return f'{self.func}({output})'
         else:
             return output
@@ -108,6 +109,7 @@ class Expression:
             'Expression('
             + ', '.join([repr(t) for t in self.args])
             + (f", func='{self.func}'" if self.func else '')
+            + (f", prefix='{self.prefix}'" if self.prefix else '')
             + ')'
         )
     
@@ -123,10 +125,10 @@ class Expression:
         text = str(self)
         for k, v in self.placeholders.items():
             if type(v) is str:
-                text = text.replace(k, f"'{v}'")
+                v = f"'{v}'"
             elif type(v) is int:
-                text = text.replace(k, str(v))
-            text = text.replace(k, str(v))
+                v = str(v)
+            text = text.replace(f':{k}', v)
         return text
     
     
@@ -226,23 +228,16 @@ class Expression:
     
     def __add__(self, other):
         """
-        Add two numbers, concatenate two strings, or throw
-        an error.
+        Add two numbers or concatenate two strings
         """
-        othertype_ = type_(other)
-        selftype_ = type_(self)
+        othertype = type_(other)
+        selftype = type_(self)
         
-        if selftype_ in [int, float] and othertype_ in [int, float]:
-            return __class__(self, '+', other)
-        elif selftype_ is str and othertype_ is str:
+        if selftype is str and othertype is str:
             return __class__(self, '||', other)
         else:
-            raise SyntaxError(
-                'Addition is not supported between '
-                f'{selftype_} value "{self}" and {othertype_} '
-                f'value "{other}"'
-            )
-    
+            return __class__(self, '+', other)
+        
     def __sub__(self, other):
         return __class__(self, '-', other)
     
@@ -318,7 +313,7 @@ class Expression:
         "SQLite EXISTS() function"
         return __class__(self, func='EXISTS')
     
-    def in_list(self, vals: list):
+    def in_(self, vals: list):
         if type(vals) in [list, tuple, set]:
             return __class__(self, 'IN', '(', *vals, ')')
         else:
@@ -347,23 +342,23 @@ class Expression:
     def substr(self, start: int, length: int):
         return __class__(self, start, length, func='SUBSTR')
     
-    def strip(self, character: str = None):
-        if character:
-            return __class__(self, character, func='TRIM')
-        else:
+    def strip(self, character: str = ' '):
+        if character == ' ':
             return __class__(self, func='TRIM')
+        else:
+            return __class__(self, character, func='TRIM')
     
-    def lstrip(self, character: str = None):
-        if character:
+    def lstrip(self, character: str = ' '):
+        if character == ' ':
+            return __class__(self, func='LTRIM')
+        else:
             return __class__(self, character, func='LTRIM')
-        else:
-            return __class__(self, func='LTRIM')
     
-    def rstrip(self, character: str = None):
-        if character:
-            return __class__(self, character, func='rtrim')
+    def rstrip(self, character: str = ' '):
+        if character == ' ':
+            return __class__(self, func='RTRIM')
         else:
-            return __class__(self, func='LTRIM')
+            return __class__(self, character, func='RTRIM')
     
     def index(self, substr: str):
         if type_(self) is str:
@@ -383,13 +378,15 @@ class Expression:
 # utility functions
 ########################################################################
 
-def next_placeholder():
-    global CURRENT_PLACEHOLDER
-    if CURRENT_PLACEHOLDER > MAX_PLACEHOLDER:
-        CURRENT_PLACEHOLDER = 1
+_MAX_PLACEHOLDER = 9999999
+_CURRENT_PLACEHOLDER = 0
+def next_placeholder() -> int:
+    global _CURRENT_PLACEHOLDER
+    if _CURRENT_PLACEHOLDER > _MAX_PLACEHOLDER:
+        _CURRENT_PLACEHOLDER = 1
     else:
-        CURRENT_PLACEHOLDER += 1
-    return f':{CURRENT_PLACEHOLDER}'
+        _CURRENT_PLACEHOLDER += 1
+    return f':{_CURRENT_PLACEHOLDER}'
 
 def type_(value):
     """
@@ -428,7 +425,7 @@ def type_(value):
             ]:
                 return bool
             elif operator in ['*', '+', '-']:
-                if float in [type_(tokens[0]), type_(tokens[2])]:
+                if float in [type_(value.tokens[0]), type_(value.tokens[2])]:
                     return float
                 else:
                     return int
@@ -443,23 +440,14 @@ def type_(value):
             'RTRIM', 'TRIM', 'REPLACE', 'TYPEOF',
         ]:
             return str
-        elif value.func in [
-            'MAX', 'MIN', 'SUM', 'ABS', 
-        ]:
+        elif value.func in ['MAX', 'MIN', 'SUM', 'ABS']:
             return type_(value.args[0])
-        elif value.func in ['EXISTS']:
+        elif value.func in ['EXISTS', 'NOT EXISTS']:
             return bool
             
-        else:
+        elif value.func:
             raise NotImplementedError(
                 f'Unsure what type is outputted by a "{value.func}" function'
             )
     else:
         return type(value)
-
-def function(name, *args, **kwargs):
-    global FUNCTIONS
-    if not FUNCTIONS:
-        import functions
-        FUNCTIONS = var(functions)
-    return FUNCTIONS[name](*args, **kwargs)

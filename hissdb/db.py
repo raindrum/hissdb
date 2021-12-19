@@ -1,6 +1,7 @@
 # python standard imports
 from functools import cached_property
 from pathlib import Path
+from re import sub
 import sqlite3
 
 # internal imports
@@ -10,7 +11,8 @@ from .expression import Expression
 
 class Database:
     """
-    A pretty face for a sqlite3 database, with fancy access methods.
+    A convenient frontend for a sqlite3 database, with a few bells
+    and whistles to save code.
     
     If you have a Database called 'db', you can generally access any
     table in it via 'db.TABLE_NAME'. If the table name conflicts with
@@ -261,8 +263,10 @@ class Database:
         else:
             func = self.connection.execute
         if self._verbose:
-            print(
-                f"'{statement}'"
-                + (f',\n{placeholders}' if placeholders else '')
-            )
+            render = statement
+            if type(placeholders) is dict:
+                for k, v in placeholders.items():
+                    render = sub(rf':{k}(\b|$)', repr(v), render)
+            print(f'{render};\n')
+
         return func(statement, placeholders)

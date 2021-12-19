@@ -146,7 +146,7 @@ class Table:
             count(),
             where,
             **kwargs,
-        ).fetchone()[0]
+        ).execute().fetchone()[0]
     
     
     def fetchone(self, cols = '*', where = None, **kwargs):
@@ -154,7 +154,7 @@ class Table:
         Make and execute a Select statement from
         this table, and return the first result.
         """
-        return self.select(cols, where, **kwargs).fetchone()
+        return self.select(cols, where, **kwargs).execute().fetchone()
     
     
     def fetchall(self, cols = '*', where = None, **kwargs):
@@ -162,7 +162,7 @@ class Table:
         Make and execute a Select statement from
         this table, and return a list of all results.
         """
-        return self.select(cols, where, **kwargs).fetchall()
+        return self.select(cols, where, **kwargs).execute().fetchall()
     
     
     def insert(self, row: dict = {}, **kwargs) -> int:
@@ -228,8 +228,7 @@ class Table:
         **kwargs,
     ) -> Cursor:
         """
-        Make and execute a Select statement from this table, and return
-        the resulting SQLite3 Cursor object.
+        Make and return a Select statement starting from this table.
         """
         statement = Select(
             table = self,
@@ -237,7 +236,7 @@ class Table:
             where = where,
             **kwargs,
         )
-        return statement.execute()
+        return statement
     
     
     @cached_property

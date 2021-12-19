@@ -1,5 +1,5 @@
 name: tests
-on: []
+on: [push, pull_request]
 jobs:
   build:
     name: Run Tests

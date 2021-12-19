@@ -1,4 +1,5 @@
-from hissdb import Database, Table, Column
+from hissdb import Database, Table, Column, Select
+from hissdb.functions import count
 
 db = jane_id = john_id = posts = users = None
 
@@ -175,9 +176,20 @@ def test_group_by():
     assert post_counts == [('Jane Doe', 3), ('John Doe', 1)]
 
 def test_group_having():
-    from hissdb.functions import count
     repeat_posters = posts.user_id.fetchall(
         group_by = posts.user_id,
         having = count(posts.text) > 1,
     )
     assert repeat_posters == [jane_id]
+
+def test_intersect():
+    repeat_poster = posts.user_id.select(
+        group_by = posts.user_id,
+        having = count(posts.text) > 1,
+    )
+    e_in_firstname = users.id.select(
+        where = users.first_name % '%e%'
+    )
+    combined_search = repeat_poster & e_in_firstname
+    results = combined_search.execute().fetchall()
+    assert results == [(jane_id,)]

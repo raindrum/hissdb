@@ -1,6 +1,6 @@
 # Getting Started
 
-<a href="https://github.com/raindrum/hissdb/actions/workflows/pytest.yml"><img src="https://github.com/raindrum/hissdb/actions/workflows/pytest.yml/badge.svg" alt="pytest" /></a> <a href="https://github.com/raindrum/hissdb/issues"><img src="https://img.shields.io/github/issues/raindrum/hissdb" alt="GitHub issues" /></a> <a href="https://github.com/raindrum/hissdb/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/raindrum/hissdb" alt="GitHub license" /></a> <a href="https://pypi.org/project/hissdb/"><img src="https://img.shields.io/pypi/v/hissdb" alt="PyPI" /></a>
+<a href="https://github.com/raindrum/hissdb/issues"><img src="https://img.shields.io/github/issues/raindrum/hissdb" alt="GitHub issues" /></a> <a href="https://github.com/raindrum/hissdb/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/raindrum/hissdb" alt="GitHub license" /></a> <a href="https://pypi.org/project/hissdb/"><img src="https://img.shields.io/pypi/v/hissdb" alt="PyPI" /></a>
 
 HissDB is a SQLite3 frontend with a focus on ease-of-use and tight integration with Python syntax.
 
