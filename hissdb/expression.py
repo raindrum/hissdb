@@ -83,6 +83,14 @@ class Expression:
                 arg = f'({str(arg)})'
             
             self.tokens.append(arg)
+        
+        for i, token in enumerate (self.tokens):
+            if (
+                token is '='
+                and i+1 < len(self.tokens)
+                and self.tokens[i+1] in ['NULL', 'NOT']
+            ):
+                self.tokens[i] = 'IS'
             
         self._necessary_tables = list(set(self._necessary_tables))
     
@@ -138,7 +146,7 @@ class Expression:
         return __class__(self, 'AND', other)
     
     def __or__(self, other):
-        return __class__('(', self, ')', 'OR', '(', other, ')')
+        return __class__('(', self, 'OR', other, ')')
     
     def __rshift__(self, other):
         return __class__(self, '>>', other)

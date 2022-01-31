@@ -370,18 +370,14 @@ class Update(BaseStatement):
     def __init__(self, updates: dict[Column, Expression] = {}, **kwargs):
         self.raw_updates = updates
         super().__init__(**kwargs)
-    
-    @property
-    def updates(self):
-        updates = {}
+        self.updates = {}
         for key, val in self.raw_updates.items():
-            updates[self._resolve_column(key)] = val
+            self.updates[self._resolve_column(key)] = Expression(val)
         if self.unknown_kwargs:
             kwargs = {}
             for k, v in self.unknown_kwargs.items():
-                kwargs[self._resolve_column(k)] = v
-            updates.update(kwargs)
-        return updates
+                kwargs[self._resolve_column(k)] = Expression(v)
+            self.updates.update(kwargs)
     
     @property
     def clauses(self):
