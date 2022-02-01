@@ -1,4 +1,5 @@
 # python standard imports
+from __future__ import annotations
 from functools import cached_property
 from copy import copy
 from sqlite3 import Cursor

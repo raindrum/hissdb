@@ -1,4 +1,5 @@
 # python standard imports
+from __future__ import annotations
 from functools import cached_property
 from pathlib import Path
 from re import sub

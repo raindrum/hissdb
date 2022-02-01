@@ -1854,7 +1854,7 @@ but you should not need to use it.</p>
       </tr>
       <tr>
         <td><code>columns</code></td>
-        <td><code>dict</code></td>
+        <td><code>dict[str, str]</code></td>
         <td><p>a dict where each key is the name of a column, and
 each value contains the column constraints, e.g.
 {'id': 'INTEGER PRIMARY KEY', 'title': 'TEXT NOT NULL'}.</p></td>
@@ -1862,7 +1862,7 @@ each value contains the column constraints, e.g.
       </tr>
       <tr>
         <td><code>foreign_keys</code></td>
-        <td><code>dict</code></td>
+        <td><code>dict[str, str]</code></td>
         <td><p>a dict where each key is the name of a column
 in this table, and each value represents a column in
 another table. Values can be specified as Column objects
@@ -1871,7 +1871,7 @@ or as strings like 'users(id)' or 'users.id'.</p></td>
       </tr>
       <tr>
         <td><code>primary_key</code></td>
-        <td><code>tuple</code></td>
+        <td><code>tuple[str]</code></td>
         <td><p>optional tuple with the names of multiple
 columns that should be combined to form the primary key.</p></td>
         <td><code>()</code></td>
@@ -4650,7 +4650,7 @@ met.</p></td>
       </tr>
       <tr>
         <td><code>order_by</code></td>
-        <td><code>tuple</code></td>
+        <td><code>tuple[Expression]</code></td>
         <td><p>a Column, an Expression object representing a
 virtual column, or a tuple containing multiple of either
 of those things. To sort descending, you can use the
@@ -5073,7 +5073,7 @@ table. For instance, 'first_name="Jerry"' is equivalent to
       </tr>
       <tr>
         <td><code>cols</code></td>
-        <td><code>list</code></td>
+        <td><code>list[Column]</code></td>
         <td><p>list of Column objects, or Expressions representing
 virtual columns, that the statement should select. For
 ease of use, columns can also be referenced via names
@@ -5088,7 +5088,7 @@ rather than Column objects.</p></td>
       </tr>
       <tr>
         <td><code>group_by</code></td>
-        <td><code>list</code></td>
+        <td><code>list[Column]</code></td>
         <td><p>equivalent to SQL 'GROUP BY' clause</p></td>
         <td><code>None</code></td>
       </tr>
@@ -5377,7 +5377,7 @@ rather than Column objects.</p></td>
   <tbody>
       <tr>
         <td><code>cols</code></td>
-        <td><code>tuple</code></td>
+        <td><code>tuple[Column]</code></td>
         <td><p>tuple of Column objects (or strings representing them)
 corresponding to the columns for which values will
 be provided.</p></td>
@@ -5385,7 +5385,7 @@ be provided.</p></td>
       </tr>
       <tr>
         <td><code>rows</code></td>
-        <td><code>list</code></td>
+        <td><code>list[tuple]</code></td>
         <td><p>list or generator containing each row to insert. A row
 is a tuple whose values each represent the corresponding
 value in cols.</p></td>
@@ -5494,7 +5494,7 @@ table constraint. Options are 'ABORT', 'FAIL', 'IGNORE',
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js", "version": "0.0.3"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js", "version": "0.0.4"}</script>
     
     
       <script src="../assets/javascripts/bundle.e1a181d9.min.js"></script>
