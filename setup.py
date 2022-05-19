@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setuptools.setup(
     name='hissdb',
-    version='0.0.4',
+    version='0.0.5',
     description='a simple SQLite query builder with a few bells and whistles',
     author='Simon Raindrum Sherred',
     author_email='simonraindrum@gmail.com',

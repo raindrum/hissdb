@@ -1,5 +1,6 @@
 # python standard imports
 from functools import cached_property
+from datetime import datetime
 from copy import copy
 
 class Expression:
@@ -388,7 +389,7 @@ class Expression:
 
 _MAX_PLACEHOLDER = 9999999
 _CURRENT_PLACEHOLDER = 0
-def next_placeholder() -> int:
+def next_placeholder() -> str:
     global _CURRENT_PLACEHOLDER
     if _CURRENT_PLACEHOLDER > _MAX_PLACEHOLDER:
         _CURRENT_PLACEHOLDER = 1
@@ -411,6 +412,8 @@ def type_(value):
             return str
         elif type_str == 'BLOB':
             return bytes
+        elif type_str.lower() == 'timestamp':
+            return datetime
         else:
             raise NotImplementedError(
                 f'Unsure how to parse SQLite datatype "{type_str}"'
